@@ -1,0 +1,43 @@
+{
+    "name": "waner1er/boulette",
+    "description": "Boulette et la Crotte d'Or : beat'em up d'arcade cartoon généré en PHP (pixel art, décors SVG, musique) et animé en JavaScript.",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^11.5",
+        "squizlabs/php_codesniffer": "^3.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Boulette\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Boulette\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "php -S localhost:8000"
+        ],
+        "build": "php tools/build.php",
+        "preview": "php tools/preview.php",
+        "test": "phpunit",
+        "lint": "phpcs",
+        "analyse": "phpstan analyse --memory-limit=1G",
+        "check": [
+            "@lint",
+            "@analyse",
+            "@test"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

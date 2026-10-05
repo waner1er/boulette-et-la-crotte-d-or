@@ -1,0 +1,16 @@
+import { Mode } from './Mode.js';
+
+/** Titre du niveau, 3 s ou jusqu'à START. */
+export class IntroMode extends Mode {
+    static DURATION = 180;
+
+    update() {
+        const { game, state, input } = this;
+        state.players.forEach((p) => p.anim++);
+        const skipped = state.modeTimer > 30 && input.wasPressed('Enter', 'Space');
+        if (state.modeTimer > IntroMode.DURATION || skipped) {
+            game.hud.message('', 0);
+            game.setMode('playing');
+        }
+    }
+}
