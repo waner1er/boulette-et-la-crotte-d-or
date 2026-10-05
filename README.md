@@ -6,6 +6,8 @@ Elle traverse **20 niveaux** (5 zones × 4) remplis de légumes mutants, avec so
 et ses prouts supersoniques. Son ami Saucisse, le teckel qui travaille au fast-food, lui apporte les cadeaux des menus enfants.
 À deux, Saucisse rejoint la bagarre.
 
+**▶ Jouer : https://waner1er.github.io/boulette-et-la-crotte-d-or/**
+
 ## Commandes
 
 Au clavier, ou sur mobile avec le stick et les boutons dessinés sur la borne (en paysage).
