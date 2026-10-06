@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "Boulette et la Crotte d'Or",
+    "slug": "boulette",
+    "scheme": "boulette",
+    "version": "1.0.0",
+    "orientation": "landscape",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#120a1c",
+    "icon": "./assets/icon.png",
+    "ios": {
+      "bundleIdentifier": "fr.erwanrivet.boulette",
+      "supportsTablet": true,
+      "requireFullScreen": true,
+      "infoPlist": {
+        "UIStatusBarHidden": true,
+        "UIViewControllerBasedStatusBarAppearance": false
+      }
+    },
+    "android": {
+      "package": "fr.erwanrivet.boulette",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#120a1c"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "output": "static",
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
+    },
+    "experiments": {
+      "typedRoutes": true,
+      "baseUrl": "/boulette-et-la-crotte-d-or"
+    },
+    "runtimeVersion": {
+      "policy": "fingerprint"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash.png",
+          "backgroundColor": "#120a1c",
+          "imageWidth": 240
+        }
+      ],
+      "expo-screen-orientation",
+      "react-native-audio-api"
+    ]
+  }
+}

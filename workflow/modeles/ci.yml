@@ -1,0 +1,51 @@
+# À copier dans .github/workflows/ci.yml
+# Vérifier les dernières versions majeures des actions au moment de l'installer.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4          # lit "packageManager" dans package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Cache Turborepo
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: turbo-${{ runner.os }}-${{ github.sha }}
+          restore-keys: turbo-${{ runner.os }}-
+      - run: pnpm check                     # lint, typecheck, unitaires, parité, simulation
+
+  e2e-web:
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter game export:web
+      - run: pnpm --filter game exec playwright install --with-deps chromium
+      - run: pnpm --filter game e2e
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-resultats
+          path: apps/game/test-results/
