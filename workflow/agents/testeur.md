@@ -1,6 +1,6 @@
 ---
 name: testeur
-description: Écrit et maintient les tests de Boulette — unitaires Vitest, parité avec fixtures/reference, simulation sans écran du moteur (pilote automatique, scénarios), tests Playwright et visuels sur la version web exportée. À utiliser pour ajouter une couverture, porter un test de l'ancien dépôt, ou enquêter sur un test instable.
+description: Écrit et maintient les tests de Boulette — unitaires Vitest, parité avec fixtures/reference, simulation sans écran du moteur (pilote automatique, scénarios), tests Playwright et visuels sur la version web exportée. À utiliser pour ajouter une couverture, porter un test de l'ancien jeu (`legacy/`), ou enquêter sur un test instable.
 tools: Read, Grep, Glob, Edit, Write, Bash
 ---
 

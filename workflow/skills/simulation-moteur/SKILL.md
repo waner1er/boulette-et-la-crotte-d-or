@@ -22,7 +22,7 @@ simulate({
 - `fingerprint` : SHA-1 d'une sérialisation stable de l'état (positions arrondies, vies, score, mode, image).
 
 ## Le pilote automatique
-Porté de `tests/e2e/harness.mjs` de l'ancien dépôt. Règle de base : avancer, se tourner vers le légume le plus proche,
+Porté de `tests/e2e/harness.mjs` de l'ancien jeu (`legacy/`). Règle de base : avancer, se tourner vers le légume le plus proche,
 tirer à distance, mordre au contact, prout quand ≥ 3 légumes sont proches et que la recharge est prête, ramasser les bonus.
 Il doit finir le niveau 1 ; pour les autres niveaux, on accepte un pilote « invincible » (option) pour tester l'enchaînement.
 

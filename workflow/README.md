@@ -14,7 +14,7 @@ une seule base de code **Expo + React + TypeScript** qui sort sur **iOS, Android
 | [01-DECISIONS.md](01-DECISIONS.md) | avant de remettre un choix en cause (ADR numérotées) |
 | [02-ARCHITECTURE.md](02-ARCHITECTURE.md) | avant de créer un fichier : où il va, de qui il dépend |
 | [03-PLAN.md](03-PLAN.md) | pour savoir quoi faire maintenant : phases, tâches, critères de fin |
-| [04-CARTE-MIGRATION.md](04-CARTE-MIGRATION.md) | pour porter un fichier de l'ancien dépôt : sa destination et la façon de le porter |
+| [04-CARTE-MIGRATION.md](04-CARTE-MIGRATION.md) | pour porter un fichier de l'ancien jeu (`legacy/`) : sa destination et la façon de le porter |
 | [05-CONVENTIONS.md](05-CONVENTIONS.md) | avant d'écrire du code |
 | [06-TESTS-QUALITE.md](06-TESTS-QUALITE.md) | avant de dire « fini » |
 | [07-COMMANDES.md](07-COMMANDES.md) | référence des commandes (à tenir à jour) |

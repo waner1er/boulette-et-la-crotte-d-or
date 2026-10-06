@@ -1,6 +1,8 @@
 # 04 — Carte de migration
 
-Pour chaque fichier de l'ancien dépôt : sa destination et la façon de le porter.
+Pour chaque fichier de l'ancien jeu (`legacy/`) : sa destination et la façon de le porter.
+
+Les chemins de la colonne « Ancien » sont relatifs à `legacy/`, où l'ancien jeu est rangé sur la branche `expo-refacto`.
 
 | Action | Sens |
 |---|---|

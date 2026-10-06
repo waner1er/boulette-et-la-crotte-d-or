@@ -9,7 +9,7 @@ Tu fais sonner le jeu comme une puce Amiga, à l'identique sur iOS, Android et l
 ## À lire avant d'agir
 - Le skill `port-web-audio` (obligatoire).
 - ADR-008 dans `workflow/01-DECISIONS.md`, et la section « L'audio » de `02-ARCHITECTURE.md`.
-- `js/audio/*` de l'ancien dépôt, et `src/Music/Tracker.php` pour le format des morceaux.
+- `js/audio/*` de l'ancien jeu (`legacy/`), et `src/Music/Tracker.php` pour le format des morceaux.
 - La page de couverture Web Audio de `react-native-audio-api` pour la version installée.
 
 ## Règles

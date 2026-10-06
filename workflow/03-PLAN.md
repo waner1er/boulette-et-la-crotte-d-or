@@ -29,7 +29,7 @@ Objectif : un monorepo qui compile, une app vide sur 3 cibles, et les **trois ri
 | P0.5 | Mettre à jour les ADR-005 et ADR-008 (statut *Acceptée* ou *Remplacée*) selon les spikes | `01-DECISIONS.md` | statuts à jour | architecte |
 
 ## Phase 1 — Figer les références PHP · 2 soirées
-À faire **dans l'ancien dépôt**, avant de porter quoi que ce soit.
+À faire **dans `legacy/`**, avant de porter quoi que ce soit.
 
 | ID | Tâche | Livrable | Critère de fin | Qui |
 |---|---|---|---|---|
@@ -59,7 +59,7 @@ Objectif : `pnpm forge` produit la même chose que le PHP. **Rien n'est supprim�
 | P2.12 | `gameData.ts` + `bin/forge.ts` + tâche Turborepo `forge` (entrées : `content`, `forge/src` ; sortie : `dist/`) | `game-data.json` = référence (hors `sceneUrl`) ; 2e exécution servie par le cache | porteur · `expo-monorepo` |
 | P2.13 | Outil `tools/sprite-sheet.ts` : planche PNG de tous les sprites (remplace `composer preview`) | planche visuellement identique à la référence | testeur |
 
-**Fin de phase** : toute la parité est verte en CI ; on peut archiver le PHP (il reste lisible dans l'ancien dépôt).
+**Fin de phase** : toute la parité est verte en CI ; on peut archiver le PHP (il reste lisible dans l'historique Git et sur `main`).
 
 ## Phase 3 — Moteur en TypeScript · 6 à 8 soirées
 

@@ -6,7 +6,7 @@ Mettre ce fichier à jour dans la PR qui ajoute ou change une commande.
 ## Prérequis
 - Node ≥ 20.19.4 (exigence de React Native 0.85 / Expo SDK 56 — revérifier au SDK choisi), pnpm (via `corepack enable`)
 - Compte Expo + `npm i -g eas-cli` (ou `pnpm dlx eas-cli`)
-- Ancien dépôt cloné à côté, avec PHP ≥ 8.2, pour la phase 1 seulement
+- PHP ≥ 8.2 et Composer, pour la phase 1 seulement (ancien jeu dans `legacy/`)
 
 ## Racine du monorepo
 | Commande | Effet | Créée par |
@@ -38,9 +38,9 @@ Mettre ce fichier à jour dans la PR qui ajoute ou change une commande.
 | `eas submit -p ios` · `eas submit -p android` | envoi à TestFlight / Play Console |
 | `eas update --channel production -m "message"` | correctif JS sans passer par les stores |
 
-## Ancien dépôt (phase 1 uniquement)
+## Ancien jeu dans `legacy/` (phase 1 uniquement — commandes lancées depuis `legacy/`)
 | Commande | Effet |
 |---|---|
-| `php tools/export-reference.php ../boulette/fixtures/reference` | exporte les références (P1.1, P1.2) |
+| `php tools/export-reference.php ../fixtures/reference` | exporte les références (P1.1, P1.2) |
 | `composer preview` | planche des sprites de référence |
 | `node tools/screenshot.mjs <niveau> 5 <sortie.png>` | capture d'un niveau à 5 s |

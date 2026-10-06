@@ -134,3 +134,14 @@ Détails dans [06-TESTS-QUALITE.md](06-TESTS-QUALITE.md).
 
 **Décision** : `@react-native-async-storage/async-storage` (fonctionne aussi sur le web) derrière une interface
 `Storage` du moteur (meilleur score, réglages audio, niveaux débloqués).
+
+## ADR-015 — Branche `expo-refacto` dans le dépôt existant, ancien jeu rangé dans `legacy/`
+**Statut** : Acceptée — 2026-10-06
+
+**Contexte** : le site en ligne est servi par GitHub Pages depuis la racine de `main` (`index.html` commité, aucun workflow).
+**Décision** : la migration se fait sur la branche `expo-refacto` du dépôt actuel. L'ancien jeu y est déplacé tel quel
+dans `legacy/` (aucun fichier modifié) ; la racine accueille le monorepo. `main` et le site en ligne ne bougent pas
+jusqu'à la phase 8, où la publication passe par GitHub Actions (ADR-012).
+**Vérification** : `php tools/build.php` lancé depuis `legacy/` régénère des fichiers identiques à ceux commités
+(seuls changent les paramètres de cache `?v=`).
+**Conséquences** : chemins de la carte de migration relatifs à `legacy/` ; `legacy/` est supprimé une fois la parité atteinte.

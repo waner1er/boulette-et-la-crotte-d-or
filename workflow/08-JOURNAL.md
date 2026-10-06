@@ -13,9 +13,18 @@ Modèle :
 
 ---
 
+## 2026-10-06 — Branche `expo-refacto` et rangement dans `legacy/`
+**Fait** : branche `expo-refacto` créée ; ancien jeu déplacé tel quel dans `legacy/` (ADR-015) ; `AGENTS.md`/`CLAUDE.md`
+du nouveau projet à la racine ; docs du workflow pointées vers `legacy/`.
+**Vérifié** : `php tools/build.php` depuis `legacy/` → sorties identiques aux fichiers commités (hors `?v=`).
+**Surprises** : dans l'environnement cloud de Claude, `composer install` échoue (téléchargements depuis api.github.com
+refusés par le proxy) : PHPUnit/PHPStan non lançables ici ; `composer dump-autoload` suffit pour exécuter le PHP.
+À lancer en local si besoin des tests PHP.
+**Prochaine étape** : P0.1 — monorepo pnpm + Turborepo à la racine.
+
 ## 2026-10-06 — Cadrage
 **Fait** : analyse de l'ancien dépôt (PHP ~4 450 lignes, JS ~3 950 lignes ; logique déjà découplée de la plateforme) ;
 choix Expo + React + TS universel, abandon du PHP, Skia, monorepo ; rédaction du dossier `workflow/`.
 **Surprises / décisions** : les décors sont animés en CSS (`@keyframes` + `animation-delay` aléatoires) → ADR-006
 (listes d'affichage). 19 `Math.random()` dans la logique → ADR-009.
-**Prochaine étape** : P0.1 (monorepo) et, en parallèle, P1.1 (export des références dans l'ancien dépôt).
+**Prochaine étape** : P0.1 (monorepo) et, en parallèle, P1.1 (export des références dans `legacy/`).

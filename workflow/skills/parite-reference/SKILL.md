@@ -9,7 +9,7 @@ description: Produire les références de l'ancien jeu Boulette (sorties PHP, su
 L'ancien jeu est l'étalon. On fige ses sorties **une fois**, avant de porter, dans `fixtures/reference/`.
 Le port est juste quand il reproduit ces sorties. On ne retouche jamais une référence pour faire passer un test.
 
-## Produire les références (dans l'ancien dépôt, PHP ≥ 8.2)
+## Produire les références (dans `legacy/`, PHP ≥ 8.2)
 Script `tools/export-reference.php <dossier>` qui s'appuie sur `vendor/autoload.php` et écrit :
 | Fichier | Source PHP |
 |---|---|
@@ -23,7 +23,7 @@ Script `tools/export-reference.php <dossier>` qui s'appuie sur `vendor/autoload.
 | `random.json` | `{ seed, min, max, values[10000] }` pour chaque graine et intervalle du plan (P1.2) + `chance`, `oneIn`, `pick` |
 JSON écrit avec `JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZERO_FRACTION`.
 
-**Contrôle** : `sha1_file(scenes/level-N.svg)` doit égaler `tests/snapshots/scene-N.sha1` de l'ancien dépôt.
+**Contrôle** : `sha1_file(scenes/level-N.svg)` doit égaler `legacy/tests/snapshots/scene-N.sha1`.
 S'il diffère, la référence est fausse : on corrige le script avant d'aller plus loin.
 
 Captures (P1.3) avec les outils existants : `composer preview`, `php tools/scenes.php && node tools/capture.mjs`,
